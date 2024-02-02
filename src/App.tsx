@@ -1,17 +1,19 @@
 import Button from "./component/Button"
 import Input from "./component/Input"
+import Container from "./component/Container"
 
 
 const App = () => {
   return <main>
     {/* <Input id='name' label='Your name' type='text' disabled/>
     <Input id='age' label='Your age' type='number' /> */}
-    <p>
+    {/* <p>
       <Button target="">a Button</Button>
     </p>
     <p>
       <Button href='https://google.com'>a Button</Button>
-    </p>
+    </p> */}
+    <Container as={Button}>Click Me</Container>
   </main>
 }
 
