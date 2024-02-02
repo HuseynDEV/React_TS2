@@ -1,7 +1,8 @@
-import { type ComponentPropsWithoutRef } from "react"
+import { type ComponentPropsWithoutRef , type ReactNode} from "react"
 
 type ButtonProps = ComponentPropsWithoutRef<'button'> & {
-    href?: never
+    href?: never,
+    children: ReactNode
 }
 
 type AnchorProps = ComponentPropsWithoutRef<'a'> & {
@@ -20,7 +21,7 @@ const Button = (props: ButtonProps | AnchorProps) => {
     }
 
     return (
-        <button className="button" {...props}>ButtonProps</button>
+        <button className="button" {...props}>{props.children}</button>
     )
 }
 
