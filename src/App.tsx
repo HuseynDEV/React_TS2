@@ -3,11 +3,17 @@ import Input from "./component/Input"
 import Container from "./component/Container"
 import { Demo } from "./component/Demo"
 import { useRef } from "react"
-import Form from "./component/Form"
+import Form, {type FormHandle} from "./component/Form"
 
 const App = () => {
 
-  const input = useRef(null)
+  const customRef = useRef<FormHandle>(null)
+
+  function handleSave(data: unknown) {
+    const extractedData = data as { name: string; age: string }
+    customRef.current?.clear()
+
+  }
 
   return <main>
     {/* <Input id='name' label='Your name' type='text' disabled/>
@@ -23,7 +29,9 @@ const App = () => {
     {/* <Demo/> */}
 
     {/* <Input label="Test" id='test' ref={ input} /> */}
-    <Form>
+
+
+    <Form onSave={handleSave} ref={customRef}>
       <Input label="Name" id='name' type="text" />
       <Input label="Age" id='age' type="number" />
       <p>
