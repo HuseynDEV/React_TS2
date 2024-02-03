@@ -5,15 +5,14 @@ type InputProps = {
     id: string,
 } & ComponentPropsWithoutRef<'input'>
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
-    ({ label, id, ...props }: InputProps, ref) => {
-        return (
-            <p>
-                <label htmlFor={id}>{label}</label>
-                <input id={id}  {...props} ref={ref} />
-            </p>
-        )
-    }
-    
-)
+const Input = ({ label, id, ...props }: InputProps) => {
+    return (
+        <p>
+            <label htmlFor={id}>{label}</label>
+            <input id={id}  {...props} />
+        </p>
+    )
+}
+
+
 export default Input

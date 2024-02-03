@@ -3,7 +3,7 @@ import Input from "./component/Input"
 import Container from "./component/Container"
 import { Demo } from "./component/Demo"
 import { useRef } from "react"
-
+import Form from "./component/Form"
 
 const App = () => {
 
@@ -22,7 +22,14 @@ const App = () => {
 
     {/* <Demo/> */}
 
-    <Input label="Test" id='test' ref={ input} />
+    {/* <Input label="Test" id='test' ref={ input} /> */}
+    <Form>
+      <Input label="Name" id='name' type="text" />
+      <Input label="Age" id='age' type="number" />
+      <p>
+        <Button>Save</Button>
+      </p>
+    </Form>
 
   </main>
 }
