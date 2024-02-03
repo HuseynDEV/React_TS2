@@ -8,7 +8,7 @@ type IconButtonProps = {
     children: ReactNode;
 } & ComponentPropsWithoutRef<'button'>;
 
-export function IconButton({icon: Icon, children, ...otherProps}: IconButtonProps) {
+export function IconButton({ icon: Icon, children, ...otherProps }: IconButtonProps) {
     return (
         <button {...otherProps}>
             <span>
